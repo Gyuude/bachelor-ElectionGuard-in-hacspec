@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["secondCheck","Step 2. (Guardian public key validation) "]]};

@@ -1,0 +1,17 @@
+[package]
+name = "vThree"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/vThree.rs"
+
+[dependencies]
+hacspec-lib = { path = "../../hacspec/lib" }
+hacspec-sha256 = { path = "../../hacspec/examples/sha256" }
+schema = { path = "../schema" }
+vOne = { path = "../vOne" }
+seq_arithmetic = { path = "../seq_arithmetic" }
+string = { path = "../string" }

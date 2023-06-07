@@ -1,0 +1,18 @@
+[package]
+name = "doc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/doc.rs"
+
+[dependencies]
+hacspec-lib = { path = "../../hacspec/lib" }
+seq_arithmetic = { path = "../seq_arithmetic" }
+string = { path = "../string" }
+vOne = { path = "../vOne" }
+vTwo = { path = "../vTwo" }
+vThree = { path = "../vThree" }
+vFour = { path = "../vFour" }

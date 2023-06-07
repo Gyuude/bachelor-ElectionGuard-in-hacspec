@@ -1,0 +1,5 @@
+(function() {var implementors = {
+"hacspec_lib":[],
+"hacspec_poly1305":[["impl <a class=\"trait\" href=\"hacspec_lib/traits/trait.UnsignedInteger.html\" title=\"trait hacspec_lib::traits::UnsignedInteger\">UnsignedInteger</a> for <a class=\"struct\" href=\"hacspec_poly1305/struct.FieldCanvas.html\" title=\"struct hacspec_poly1305::FieldCanvas\">FieldCanvas</a>"],["impl <a class=\"trait\" href=\"hacspec_lib/traits/trait.UnsignedInteger.html\" title=\"trait hacspec_lib::traits::UnsignedInteger\">UnsignedInteger</a> for <a class=\"struct\" href=\"hacspec_poly1305/struct.FieldElement.html\" title=\"struct hacspec_poly1305::FieldElement\">FieldElement</a>"]],
+"schema":[["impl <a class=\"trait\" href=\"hacspec_lib/traits/trait.UnsignedInteger.html\" title=\"trait hacspec_lib::traits::UnsignedInteger\">UnsignedInteger</a> for <a class=\"struct\" href=\"schema/struct.BINT.html\" title=\"struct schema::BINT\">BINT</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

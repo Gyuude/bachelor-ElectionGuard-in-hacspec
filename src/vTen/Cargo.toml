@@ -1,0 +1,18 @@
+[package]
+name = "vTen"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/vTen.rs"
+
+[dependencies]
+hacspec-lib = { path = "../../hacspec/lib" }
+hacspec-provider = { path = "../../hacspec/provider" }
+schema = { path = "../schema" }
+string = { path = "../string" }
+vOne = { path = "../vOne" }
+seq_arithmetic = { path = "../seq_arithmetic" }
+hacspec-sha256 = { path = "../../hacspec/examples/sha256" }

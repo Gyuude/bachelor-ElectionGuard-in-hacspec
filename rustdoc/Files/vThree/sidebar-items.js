@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":[["thirdCheck","Step 3. (Election public-key validation)"]]};
