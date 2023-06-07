@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/mnt/c/Users/rlore/Desktop/repo/bachelor-ElectionGuard-in-hacspec/verifier/vOne/src/vOne.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>vOne.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-52c5db6f6f352e54.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-d2686a620d99aad7.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `/mnt/c/Users/rlore/Desktop/repo/bachelor-ElectionGuard-in-hacspec/src/vOne/src/vOne.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>vOne.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-52c5db6f6f352e54.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-d2686a620d99aad7.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js"                  integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js"    integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
 <script>
@@ -249,15 +249,12 @@
 <a href="#218" id="218">218</a>
 <a href="#219" id="219">219</a>
 <a href="#220" id="220">220</a>
-<a href="#221" id="221">221</a>
-<a href="#222" id="222">222</a>
-<a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
 </pre><pre class="rust"><code><span class="attr">#![allow(non_snake_case)]
 #![allow(dead_code)]
 #![allow(warnings, unused)]
 
 </span><span class="kw">use </span>hacspec_lib::<span class="kw-2">*</span>;
+<span class="kw">use </span>schema::<span class="kw-2">*</span>;
 
 <span class="macro">bytes!</span>(Barr, <span class="number">512</span>);
 
@@ -452,12 +449,7 @@
 /// (1.B) The small prime is equal to the prime $q = 2256 − 189$.
 /// (1.C) The cofactor is equal to $r = (p − 1)/q$.
 /// (1.D) The generator is equal to the generator g defined in Section 3.1.1.
-</span><span class="kw">pub fn </span>firstCheck(
-        pbytes: <span class="kw-2">&amp;</span>ByteSeq,
-        qbytes: <span class="kw-2">&amp;</span>ByteSeq,
-        rbytes: <span class="kw-2">&amp;</span>ByteSeq,
-        gbytes: <span class="kw-2">&amp;</span>ByteSeq
-    ) -&gt; bool {
+</span><span class="kw">pub fn </span>firstCheck(constants(pbytes, qbytes, rbytes, gbytes): constants) -&gt; bool {
     <span class="comment">// let LargePrime = BINT::from_byte_seq_be(&amp;PBARR);
     // let SMALL_PRIME = BINT::from_byte_seq_be(&amp;QBARR);
     // let COFACTOR = BINT::from_byte_seq_be(&amp;RBARR);
@@ -468,10 +460,10 @@
     // let rIn = BINT::from_byte_seq_be(rbytes);
     // let gIn = BINT::from_byte_seq_be(gbytes);
     
-    </span><span class="kw">let </span>pEq = seq_arithmetic::seq_eq(pbytes, <span class="kw-2">&amp;</span>PBARR.to_be_bytes());
-    <span class="kw">let </span>qEq = seq_arithmetic::seq_eq(qbytes, <span class="kw-2">&amp;</span>QBARR.to_be_bytes());
-    <span class="kw">let </span>rEq = seq_arithmetic::seq_eq(rbytes, <span class="kw-2">&amp;</span>RBARR.to_be_bytes());
-    <span class="kw">let </span>gEq = seq_arithmetic::seq_eq(gbytes, <span class="kw-2">&amp;</span>GBARR.to_be_bytes());
+    </span><span class="kw">let </span>pEq = seq_arithmetic::seq_eq(<span class="kw-2">&amp;</span>pbytes, <span class="kw-2">&amp;</span>PBARR.to_be_bytes());
+    <span class="kw">let </span>qEq = seq_arithmetic::seq_eq(<span class="kw-2">&amp;</span>qbytes, <span class="kw-2">&amp;</span>QBARR.to_be_bytes());
+    <span class="kw">let </span>rEq = seq_arithmetic::seq_eq(<span class="kw-2">&amp;</span>rbytes, <span class="kw-2">&amp;</span>RBARR.to_be_bytes());
+    <span class="kw">let </span>gEq = seq_arithmetic::seq_eq(<span class="kw-2">&amp;</span>gbytes, <span class="kw-2">&amp;</span>GBARR.to_be_bytes());
 
     <span class="kw">let </span>result = pEq &amp;&amp; qEq &amp;&amp; rEq &amp;&amp; gEq;
 

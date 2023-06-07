@@ -194,7 +194,7 @@ pub fn be_seq_exp(a: &Seq<U8>, exp: &usize) -> Seq<U8> {
 /// Is designed to avoid extremely large intermediate values
 /// Uses the square multiply algorithm
 pub fn be_seq_mod_exp(a: &Seq<U8>, b: &Seq<U8>, c: &Seq<U8>) -> Seq<U8> {
-    /// NOT IMPLEMENTED
+    // NOT IMPLEMENTED
     seq_one()
 }
 
@@ -353,13 +353,14 @@ pub fn seq_leq(a: &Seq<U8>, b: &Seq<U8>) -> bool {
     false
 }
 
-// Modular operation. Finds the rest when dividing two numbers
+/// Modular operation. Finds the rest when dividing two numbers
 pub fn be_seq_mod(a: &Seq<U8>, b: &Seq<U8>) -> Seq<U8> {
     let (q, m) = be_seq_div(&a, &b);
 
     m
 }
 
+/// Performs both multiplication and modular operation
 pub fn be_seq_mul_mod(a: &Seq<U8>, b: &Seq<U8>, m: &Seq<U8>) -> Seq<U8> {
     let a_mod = be_seq_mod(&a, &m);
     let b_mod = be_seq_mod(&b, &m);

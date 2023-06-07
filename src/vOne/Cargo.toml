@@ -11,3 +11,4 @@ path = "src/vOne.rs"
 [dependencies]
 hacspec-lib = { path = "../../hacspec/lib" }
 seq_arithmetic = { path = "../seq_arithmetic" }
+schema = { path = "../schema" }

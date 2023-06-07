@@ -3,6 +3,7 @@
 #![allow(warnings, unused)]
 
 use hacspec_lib::*;
+use schema::*;
 
 bytes!(Barr, 512);
 
@@ -197,12 +198,7 @@ pub const GBARR: Barr = Barr(secret_bytes!([
 /// (1.B) The small prime is equal to the prime $q = 2256 − 189$.
 /// (1.C) The cofactor is equal to $r = (p − 1)/q$.
 /// (1.D) The generator is equal to the generator g defined in Section 3.1.1.
-pub fn firstCheck(
-        pbytes: &ByteSeq,
-        qbytes: &ByteSeq,
-        rbytes: &ByteSeq,
-        gbytes: &ByteSeq
-    ) -> bool {
+pub fn firstCheck(constants(pbytes, qbytes, rbytes, gbytes): constants) -> bool {
     // let LargePrime = BINT::from_byte_seq_be(&PBARR);
     // let SMALL_PRIME = BINT::from_byte_seq_be(&QBARR);
     // let COFACTOR = BINT::from_byte_seq_be(&RBARR);
@@ -213,10 +209,10 @@ pub fn firstCheck(
     // let rIn = BINT::from_byte_seq_be(rbytes);
     // let gIn = BINT::from_byte_seq_be(gbytes);
     
-    let pEq = seq_arithmetic::seq_eq(pbytes, &PBARR.to_be_bytes());
-    let qEq = seq_arithmetic::seq_eq(qbytes, &QBARR.to_be_bytes());
-    let rEq = seq_arithmetic::seq_eq(rbytes, &RBARR.to_be_bytes());
-    let gEq = seq_arithmetic::seq_eq(gbytes, &GBARR.to_be_bytes());
+    let pEq = seq_arithmetic::seq_eq(&pbytes, &PBARR.to_be_bytes());
+    let qEq = seq_arithmetic::seq_eq(&qbytes, &QBARR.to_be_bytes());
+    let rEq = seq_arithmetic::seq_eq(&rbytes, &RBARR.to_be_bytes());
+    let gEq = seq_arithmetic::seq_eq(&gbytes, &GBARR.to_be_bytes());
 
     let result = pEq && qEq && rEq && gEq;
 

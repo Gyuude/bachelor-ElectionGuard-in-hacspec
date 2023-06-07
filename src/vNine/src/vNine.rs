@@ -16,9 +16,9 @@ fn ninthcheck(encry_tally: encrypted_tally, tall: tally, context(x21, x22, x23, 
     let mut check_d = true;
     let mut check_e = true;
 
-    let p = &vOne::PBARR.to_be_bytes();
-    let q = &vOne::QBARR.to_be_bytes();
-    let g = &vOne::GBARR.to_be_bytes();
+    let p = &PBARR.to_be_bytes();
+    let q = &QBARR.to_be_bytes();
+    let g = &GBARR.to_be_bytes();
 
     for j in 0..contests.len() {
         let (x3, contest_tally(x4, selections)) = contests[j].clone();

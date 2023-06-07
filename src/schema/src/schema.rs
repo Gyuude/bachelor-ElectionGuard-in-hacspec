@@ -1,13 +1,9 @@
+#![doc(html_no_source)]
+#![allow(non_snake_case)]
+#![allow(dead_code)]
+#![allow(warnings, unused)]
+
 use hacspec_lib::*;
-
-
-// Types to handle big integers
-unsigned_public_integer!(BINT, 4096);
-
-// Parameter types
-pub type threshold = BINT;
-pub type prime = BINT;
-pub type generator = BINT;
 
 pub type key = Seq<U8>;
 pub type value = Seq<U8>;
@@ -114,6 +110,26 @@ pub type m_contact_information = manifest_contact;
 
 pub struct manifest(pub m_election_scope_id, pub m_spec_version, pub m_type, pub m_start_date, pub m_end_date, pub m_geopolitical_units, pub m_parties,
     pub m_candidates, pub m_contests, pub m_ballot_styles, pub m_name, pub m_contact_information);
+
+// Encryption devices
+
+pub type end_device_id = U32;
+pub type end_session_id = U32;
+pub type end_launch_code = U32;
+pub type end_location = Seq<U8>;
+
+#[derive(Default, Clone)]
+pub struct encryption_device(pub end_device_id, pub end_session_id, pub end_launch_code, pub end_location);
+
+// Constants
+
+pub type c_large_prime = Seq<U8>;
+pub type c_small_prime = Seq<U8>;
+pub type c_cofactor = Seq<U8>;
+pub type c_generator = Seq<U8>;
+
+#[derive(Default, Clone)]
+pub struct constants(pub c_large_prime, pub c_small_prime, pub c_cofactor, pub c_generator);
 
 // schnorr proofs
 pub type schnorr_public_key = Seq<U8>;
@@ -385,4 +401,4 @@ pub type sb_contests = Seq<(Seq<U8>, spoiled_ballot_decrypted_contest)>;
 pub struct spoiled_ballot(pub sb_object_id, pub sb_contests);
 
 // Election type
-pub struct election_record(guardians);
+pub struct election_record(pub manifest, pub Seq<encryption_device>, pub constants, pub context, pub Seq<guardian>, pub Seq<submitted_ballot>, pub l_coefficients, pub Seq<spoiled_ballot>, pub encrypted_tally, pub tally);

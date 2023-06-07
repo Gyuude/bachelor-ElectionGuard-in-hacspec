@@ -1,6 +1,6 @@
 //! # string
 //! A library to handle string convertions needed for hashing.
-//! This library doesn't support actual string types, but works exclusefly with byte sequences from hacspec-lib.
+//! This library doesn't support actual string types, but works exclusively with byte sequences from hacspec-lib.
 
 use hacspec_lib::*;
 
@@ -27,6 +27,7 @@ pub fn from_be_bytes_to_utf8(bytes: Seq<U8>) -> Seq<U8> {
     out
 }
 
+/// Concatenates a sequence of strings, and adds the pipe character before, in-between and after
 pub fn concat_strings(strings: Seq<Seq<U8>>) -> Seq<U8> {
     let mut out = Seq::<U8>::new(0);
     let pipe = ByteSeq::from_public_slice(&[0x7Cu8]);
